@@ -1,0 +1,116 @@
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(20);
+    padding: toRem(30);
+}
+
+.calendar__actions {
+    display: flex;
+    gap: toRem(20);
+}
+
+.calendar__main {
+    width: 70%;
+
+    @include respond-to(tablet) {
+        width: 100%;
+    }
+}
+
+.calendar__mode {
+    display: flex;
+    max-width: toRem(450);
+    justify-content: space-around;
+    gap: toRem(40);
+    align-items: center;
+}
+
+.calendar__mode-container {
+    display: flex;
+    align-items: center;
+    gap: toRem(5);
+    user-select: none;
+}
+
+.calendar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(10);
+    width: 45rem;
+
+    @include respond-to(small) {
+        width: 100%;
+    }
+}
+
+.calendar__header-item {
+    display: flex;
+    align-items: center;
+    gap: toRem(20);
+
+    @include respond-to(small) {
+        gap: toRem(10);
+    }
+}
+
+.calendar__author {
+    font-weight: bold;
+    font-size: toRem(20);
+    position: relative;
+    right: toRem(10);
+
+    @include respond-to(small) {
+        position: static;
+    }
+}
+
+.calendar__created-at {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.calendar__loader {
+    height: vh(100);
+    display: flex;
+    align-items: center;
+}
+
+.calendar__users-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 37.5rem;
+    padding: toRem(10);
+    border-radius: toRem(8);
+    transition-property: background-color;
+    transition: 0.2s ease-in-out;
+
+    p {
+        font-size: toRem(18);
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--tertiary-dark);
+    }
+
+    @include respond-to(small) {
+        width: 80vw;
+    }
+}
+
+.calendar__users-list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+    padding: toRem(10) toRem(40);
+}
+
+.calendar__add-user {
+    display: flex;
+    justify-content: center;
+}

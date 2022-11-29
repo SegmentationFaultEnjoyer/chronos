@@ -1,0 +1,30 @@
+.day {
+    --today-color: var(--tertiary-main);
+
+    display: grid;
+    place-content: center;
+    transition-property: background-color;
+    transition: 0.2s ease-in-out;
+
+    &--small {
+        border-radius: 100%;
+        padding: toRem(5);
+    }
+
+    &--inactive {
+        opacity: 0.2;
+    }
+
+    &--color-secondary {
+        --today-color: var(--secondary-light);
+    }
+
+    &--today {
+        background-color: var(--today-color);
+    }
+
+    &:hover {
+        background-color: var(--secondary-main);
+        cursor: pointer;
+    }
+}

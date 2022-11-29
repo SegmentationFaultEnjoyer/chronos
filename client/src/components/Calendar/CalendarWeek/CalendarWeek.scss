@@ -1,0 +1,142 @@
+.calendar-week {
+    animation: fade 0.5s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+    padding: toRem(10);
+
+    @include respond-to(small) {
+        width: 150vw;
+        padding: 0;
+        scale: 0.6;
+        position: absolute;
+        top: toRem(-190);
+        left: toRem(-100);
+    }
+}
+
+.calendar-week__empty {
+    @include respond-to(tablet) {
+        height: toRem(60);
+    }
+}
+
+.calendar-week__title {
+    font-weight: 500;
+}
+
+.calendar-week__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 toRem(40);
+    user-select: none;
+}
+
+.calendar-week__info {
+    display: flex;
+    align-items: center;
+    gap: toRem(40);
+}
+
+.calendar-week__week-days {
+    display: grid;
+    grid-template-columns: toRem(90) repeat(7, 1fr);
+    border: toRem(2) solid var(--secondary-light);
+    
+    border-radius: toRem(8) toRem(8) 0 0;
+    background-color: var(--secondary-light);
+}
+
+.calendar-week__schedule {
+    border-left: toRem(2) solid var(--tertiary-main);
+    border-right: toRem(2) solid var(--tertiary-main);
+    border-bottom: toRem(2) solid var(--tertiary-main);
+    border-radius:  0 0 toRem(8) toRem(8);
+}
+
+.calendar-week__time {
+    display: grid;
+    grid-template-columns: toRem(90) repeat(7, 1fr);
+
+    &:last-child {
+        & > * {
+            border-bottom: none;
+        }
+    }
+}
+
+.calendar-week__time-pick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: toRem(1) dashed var(--tertiary-dark);
+    justify-content: center;
+    min-height: toRem(80);
+    gap: toRem(6);
+
+    &:nth-last-child(n + 2) {
+        border-right: toRem(1) dashed var(--tertiary-dark);
+    }
+
+    &--clickable {
+        transition-property: background-color;
+        transition: 0.2s ease-in-out;
+        justify-content: flex-start;
+        padding: toRem(5);
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--tertiary-main);
+        }
+    }
+}
+
+.calendar-week__day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:nth-last-child(n + 2) {
+        border-right: toRem(1) dashed var(--tertiary-light);
+    }
+
+    & > *:first-child {
+        font-weight: 600;
+        font-size: toRem(20);
+        user-select: none;
+    }
+
+    &--today {
+        background-color: var(--secondary-main);
+        border-radius: toRem(8) toRem(8) 0 0;
+    }
+}
+
+.calendar-week__event {
+    width: 100%;
+    border-radius: toRem(8);
+    height: toRem(25);
+    padding: toRem(2);
+    display: flex;
+
+    &:hover {
+        span {
+            max-width: toRem(110);
+        }
+        
+    }
+
+    span {
+        transition-property: width;
+        transition: 0.2s ease;
+        background-color: var(--tertiary-light);
+        padding: toRem(2);
+        border-radius: toRem(5);
+        max-width: toRem(60);
+
+        @extend %text-ellipsis;
+
+       
+    }
+}

@@ -1,0 +1,11 @@
+.calendar-page__loader {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: vh(100);
+}
+
+.calendar-page {
+    margin-top: var(--nav-bar-height);
+}

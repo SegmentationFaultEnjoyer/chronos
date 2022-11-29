@@ -1,0 +1,43 @@
+.calendar-year {
+    animation: fade 0.5s;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(toRem(200), 1fr));
+    gap: toRem(50);
+    user-select: none;
+}
+
+.calendar-year__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: toRem(10);
+}
+
+.calendar-year__pages {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+    margin-bottom: toRem(10);
+}
+
+.calendar-year__month {
+    display: grid;
+    place-content: center;
+    border-radius: toRem(8);
+    background-color: var(--tertiary-main);
+    padding: toRem(10);
+    max-width: toRem(260);
+    justify-self: center;
+}
+
+.calendar-year__month-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar-year__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+}

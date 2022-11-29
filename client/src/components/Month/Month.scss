@@ -1,0 +1,32 @@
+.month {
+    display: grid;
+    place-content: center;
+    border-radius: toRem(8);
+    background-color: var(--tertiary-main);
+    padding: toRem(10);
+    max-width: toRem(260);
+    height: fit-content;
+    justify-self: center;
+    transition-property: scale;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        scale: 1.05;
+    }
+
+    &--hidden {
+        opacity: 0.4;
+    }
+}
+
+.month__title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.month__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+}

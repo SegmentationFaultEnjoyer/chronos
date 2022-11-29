@@ -1,0 +1,22 @@
+{
+  "name": "chronos",
+  "version": "1.0.0",
+  "description": "calendar",
+  "main": "index.js",
+  "scripts": {
+    "packages": "yarn install && cd client && yarn install && cd ../server && yarn install",
+    "dev:client": "cd client && vite",
+    "dev:server": "clear && cd server && nodemon main.js run service"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.ucode.world:connect-khpi/connect-fullstack-chronos/mvoishvill.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^2.1.0",
+    "nodemon": "^2.0.19",
+    "vite": "^3.1.0"
+  }
+}

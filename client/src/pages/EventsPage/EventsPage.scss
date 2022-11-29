@@ -1,0 +1,134 @@
+.events-page {
+    margin-top: var(--nav-bar-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(20);
+
+    svg {
+        color: var(--primary-light)
+    }
+
+    @include respond-to(small) {
+        flex-direction: column;
+    }
+}
+
+.events-page__label {
+    position: absolute;
+    background-color: inherit;
+    border: toRem(1) dashed var(--secondary-main);
+    padding: toRem(4);
+    border-radius: toRem(8) 0 0 toRem(8);
+    left: toRem(-30);
+
+    &--edit {
+        top: 8%;
+    }
+
+    &--delete {
+        bottom: 8%
+    }
+
+    transition-property: transform border width;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateX(-10%);
+        border: none;
+        width: toRem(32);
+    }
+
+    @include respond-to(small) { 
+        transform: scale(0.9);
+    }
+}
+
+.events-page__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: toRem(40);
+    gap: toRem(20);
+}
+
+.events-page__side {
+    display: flex;
+    flex-direction: column;
+    padding: toRem(30);
+    gap: toRem(20);
+    border: toRem(1) dashed var(--secondary-main);
+    border-radius: toRem(8);
+    height: fit-content;
+}
+
+.events-page__instruction {
+    display: flex;
+    align-items: center;
+    gap: toRem(5);
+
+    & > *:nth-child(2) {
+        opacity: 0.7;
+        font-size: toRem(16);
+    }
+}
+
+.events-page__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    gap: toRem(30);
+}
+
+.events-page__date {
+    font-style: italic;
+}
+
+.events-page__color {
+    --color-size: #{toRem(20)};
+
+    width: var(--color-size);
+    height: var(--color-size);
+    border-radius: 100%;
+}
+
+.events-page__item {
+    position: relative;
+    border-radius: toRem(8);
+    min-width: toRem(300);
+    max-width: toRem(500);
+    min-height: toRem(90);
+    padding: toRem(10) toRem(20);
+    border: toRem(1) dashed var(--secondary-main);
+    background-color: var(--tertiary-main);
+}
+
+.events-page__events {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(15);
+}
+
+.events-page__event-title {
+    display: flex;
+    align-items: center;
+    gap: toRem(7);
+
+    & > *:first-child {
+        font-size: toRem(20);
+        font-weight: bold;
+        max-width: toRem(400);
+
+        @extend %text-ellipsis;
+
+    }
+}
+
+.events-page__loader {
+    display: flex;
+    height: vh(100);
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}

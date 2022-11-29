@@ -1,0 +1,49 @@
+.calendar-month {
+    --size: #{toRem(600)};
+
+    animation: fade 0.5s;
+    height: fit-content;
+    width: 100%;
+    max-width: var(--size);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar-month__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: toRem(20);
+}
+
+.calendar-month__week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: toRem(15) 0;
+    background-color: var(--secondary-light);
+    border-radius: toRem(8) toRem(8) 0 0;
+
+    & > li {
+        font-weight: 600;
+        font-size: toRem(20);
+        user-select: none;
+    }
+}
+
+.calendar-month__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+
+    & > li {
+        display: grid;
+        place-content: center;
+        height: toRem(85);
+        border: toRem(1) dashed var(--tertiary-main);
+       
+        @include respond-to(small) {
+            height: toRem(40);
+        }
+    }
+}

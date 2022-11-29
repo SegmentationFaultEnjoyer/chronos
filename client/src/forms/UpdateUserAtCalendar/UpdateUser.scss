@@ -1,0 +1,19 @@
+.update-user {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+    width: toRem(300);
+}
+
+.update-user__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+    width: 100%;
+    align-items: center;
+}
+
+.update-user__actions {
+    display: flex;
+    justify-content: space-between;
+}
